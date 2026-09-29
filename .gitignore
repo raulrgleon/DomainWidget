@@ -3,3 +3,7 @@ build/
 DerivedData/
 *.xcuserstate
 xcuserdata/
+# Secretos locales (las claves van en el Llavero, nunca en el repo)
+Config.plist
+*.secrets
+.env*

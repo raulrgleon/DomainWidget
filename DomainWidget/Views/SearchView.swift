@@ -18,6 +18,8 @@ struct SearchView: View {
     @State private var message: String?
     @State private var showExporter = false
     @State private var searchTask: Task<Void, Never>?
+    @State private var alternatives: [DomainAvailability] = []
+    @State private var isFindingAlternatives = false
     @FocusState private var fieldFocused: Bool
 
     private var ideaTLD: String { settings.selectedTLDs.first ?? "com" }
@@ -48,6 +50,30 @@ struct SearchView: View {
 
     var body: some View {
         List {
+            if allTaken {
+                Section {
+                    if isFindingAlternatives && alternatives.isEmpty {
+                        HStack(spacing: 10) {
+                            ProgressView().controlSize(.small)
+                            Text("Buscando alternativas libres…")
+                                .foregroundStyle(.secondary)
+                        }
+                    } else if alternatives.isEmpty {
+                        Text("No encontramos alternativas libres cercanas. Prueba las ideas de abajo\(settings.aiClient == nil ? "" : " o pide más con IA").")
+                            .font(.callout)
+                            .foregroundStyle(.secondary)
+                    }
+                    ForEach(alternatives) { alternative in
+                        AvailabilityRow(domain: alternative.domain, result: alternative)
+                    }
+                } header: {
+                    Label("Todo está ocupado · alternativas libres", systemImage: "lightbulb.fill")
+                        .foregroundStyle(.orange)
+                } footer: {
+                    Text("Otras extensiones con el mismo nombre y variaciones en .\(ideaTLD) que sí están disponibles.")
+                }
+            }
+
             if !domains.isEmpty {
                 Section {
                     if isChecking {
@@ -163,6 +189,11 @@ struct SearchView: View {
             .map(\.element)
     }
 
+    private var allTaken: Bool {
+        !isChecking && !domains.isEmpty && results.count == domains.count
+            && !results.values.contains { $0.status.isAvailable || $0.status == .unknown }
+    }
+
     private var summary: String {
         let free = results.values.filter { $0.status.isAvailable }.count
         return isChecking
@@ -205,6 +236,7 @@ struct SearchView: View {
         domains = list
         results = [:]
         ideaResults = [:]
+        alternatives = []
         let seed = parts.tld == nil ? query : parts.label
         ideas = SuggestionEngine.variations(for: seed, limit: 16).filter { $0 != parts.label }
 
@@ -222,7 +254,32 @@ struct SearchView: View {
             if all.allSatisfy({ $0.status == .unknown }), let note = all.first?.note {
                 message = note
             }
+            if free == 0, !all.contains(where: { $0.status == .unknown }) {
+                await findAlternatives(label: parts.label, excluding: tlds)
+            }
         }
+    }
+
+    /// Cuando todo está ocupado: el mismo nombre en extensiones no marcadas y variaciones en la principal.
+    private func findAlternatives(label: String, excluding tlds: [String]) async {
+        let otherTLDs = settings.allTLDs.filter { !tlds.contains($0) }.map { "\(label).\($0)" }
+        let variations = ideas.prefix(12).map { "\($0).\(ideaTLD)" }
+        let candidates = otherTLDs + variations
+        guard !candidates.isEmpty else { return }
+
+        isFindingAlternatives = true
+        let order = Dictionary(uniqueKeysWithValues: candidates.enumerated().map { ($1, $0) })
+        _ = await AvailabilityService(maxConcurrent: 8).check(domains: candidates) { result in
+            guard !Task.isCancelled else { return }
+            if variations.contains(result.domain) {
+                ideaResults[result.domain] = result
+            }
+            if result.status.isAvailable {
+                alternatives.append(result)
+                alternatives.sort { (order[$0.domain] ?? 0) < (order[$1.domain] ?? 0) }
+            }
+        }
+        isFindingAlternatives = false
     }
 
     private func checkIdeas() {

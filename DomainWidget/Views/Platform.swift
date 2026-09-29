@@ -14,6 +14,14 @@ enum Clipboard {
         UIPasteboard.general.string = text
         #endif
     }
+
+    static func string() -> String? {
+        #if os(macOS)
+        return NSPasteboard.general.string(forType: .string)
+        #else
+        return UIPasteboard.general.string
+        #endif
+    }
 }
 
 extension View {

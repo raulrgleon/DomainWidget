@@ -34,6 +34,48 @@ struct BulkView: View {
                     .font(.body.monospaced())
                     .frame(minHeight: 120)
                     .domainInputStyle()
+                    .overlay(alignment: .topLeading) {
+                        if text.isEmpty {
+                            Text("cafeteria\nmitienda.io\nraul.dev, raul.app")
+                                .font(.body.monospaced())
+                                .foregroundStyle(.tertiary)
+                                .padding(.top, 8)
+                                .padding(.leading, 5)
+                                .allowsHitTesting(false)
+                        }
+                    }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        Button {
+                            if let pasted = Clipboard.string() { text = pasted }
+                        } label: {
+                            Label("Pegar", systemImage: "doc.on.clipboard")
+                        }
+                        Button {
+                            text = "cafeteria\ncafeteriaonline\nmicafe.io\nmicafe.app\ncafe-rapido.com"
+                        } label: {
+                            Label("Ejemplo", systemImage: "wand.and.stars")
+                        }
+                        if !library.favorites.isEmpty {
+                            Button {
+                                text = library.favorites.map(\.domain).joined(separator: "\n")
+                            } label: {
+                                Label("Favoritos", systemImage: "star")
+                            }
+                        }
+                        if !text.isEmpty {
+                            Button(role: .destructive) {
+                                text = ""
+                                domains = []
+                                results = [:]
+                            } label: {
+                                Label("Limpiar", systemImage: "xmark.circle")
+                            }
+                        }
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                }
                 Picker("Extensión si falta", selection: $settings.bulkDefaultTLD) {
                     ForEach(settings.allTLDs, id: \.self) { Text(".\($0)").tag($0) }
                 }
@@ -64,7 +106,15 @@ struct BulkView: View {
                 Text("Uno por línea o separados por comas. En un CSV se usa cada celda que parezca un dominio. Máximo 500.")
             }
 
-            if !domains.isEmpty {
+            if domains.isEmpty {
+                Section("Cómo funciona") {
+                    Label("Pega una lista, usa el ejemplo o importa un CSV con tus dominios.", systemImage: "1.circle.fill")
+                    Label("Los nombres sin extensión usan la que elijas arriba (.\(settings.bulkDefaultTLD)).", systemImage: "2.circle.fill")
+                    Label("Comprobamos hasta 8 a la vez en el registro oficial (RDAP).", systemImage: "3.circle.fill")
+                    Label("Filtra los libres y exporta el resultado a CSV o compártelo.", systemImage: "4.circle.fill")
+                }
+                .font(.callout)
+            } else {
                 Section {
                     Picker("Filtro", selection: $filter) {
                         ForEach(Filter.allCases) { Text($0.rawValue).tag($0) }

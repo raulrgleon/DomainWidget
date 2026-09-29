@@ -22,26 +22,32 @@ struct SearchView: View {
 
     private var ideaTLD: String { settings.selectedTLDs.first ?? "com" }
 
+    private var searchBar: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 8) {
+                TextField("Nombre o dominio (ej. cafeteria)", text: $query)
+                    .textFieldStyle(.roundedBorder)
+                    .domainInputStyle()
+                    .focused($fieldFocused)
+                    .onSubmit(search)
+                Button("Buscar", action: search)
+                    .buttonStyle(.borderedProminent)
+                    .disabled(query.trimmingCharacters(in: .whitespaces).isEmpty)
+            }
+            TLDPicker()
+            if let message {
+                Label(message, systemImage: "exclamationmark.triangle")
+                    .font(.caption)
+                    .foregroundStyle(.orange)
+            }
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 10)
+        .background(.bar)
+    }
+
     var body: some View {
         List {
-            Section {
-                HStack(spacing: 8) {
-                    TextField("Nombre o dominio (ej. cafeteria)", text: $query)
-                        .domainInputStyle()
-                        .focused($fieldFocused)
-                        .onSubmit(search)
-                    Button("Buscar", action: search)
-                        .buttonStyle(.borderedProminent)
-                        .disabled(query.trimmingCharacters(in: .whitespaces).isEmpty)
-                }
-                TLDPicker()
-                if let message {
-                    Label(message, systemImage: "exclamationmark.triangle")
-                        .font(.caption)
-                        .foregroundStyle(.orange)
-                }
-            }
-
             if !domains.isEmpty {
                 Section {
                     if isChecking {
@@ -100,6 +106,9 @@ struct SearchView: View {
                     )
                 }
             }
+        }
+        .safeAreaInset(edge: .top, spacing: 0) {
+            searchBar
         }
         .navigationTitle("Buscar dominios")
         .toolbar {
@@ -189,7 +198,9 @@ struct SearchView: View {
         }
 
         let list = tlds.map { "\(parts.label).\($0)" }
+        #if os(iOS)
         fieldFocused = false
+        #endif
         message = nil
         domains = list
         results = [:]

@@ -52,7 +52,7 @@ struct DomainWidgetApp: App {
         }
 
         MenuBarExtra("Datos de dominio", systemImage: "globe.desk") {
-            ContentView()
+            withServices(ContentView())
                 .frame(width: 420, height: 580)
         }
         .menuBarExtraStyle(.window)

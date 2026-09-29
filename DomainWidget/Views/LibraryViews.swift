@@ -143,12 +143,59 @@ struct WatchlistView: View {
                 Text(footer)
             }
 
-            if !library.watchlist.isEmpty {
-                Section("Vigilando") {
-                    ForEach(library.watchlist) { item in
-                        AvailabilityRow(domain: item.domain, knownStatus: item.lastStatus, isPending: isChecking, detail: detail(for: item))
+            if library.watchlist.isEmpty {
+                Section {
+                    EmptyHint(
+                        systemImage: "bell.badge",
+                        title: "Vigila dominios que te interesan",
+                        message: "Te avisamos cuando un dominio ocupado quede libre o le queden \(settings.expiryWarningDays) días o menos para caducar."
+                    )
+                    Label("En Buscar, desliza un resultado a la izquierda y toca «Vigilar».", systemImage: "hand.draw")
+                    Label("O mantén pulsado cualquier dominio y elige «Vigilar».", systemImage: "hand.tap")
+                }
+                .font(.callout)
+
+                if !suggestions.isEmpty {
+                    Section("Favoritos ocupados que podrías vigilar") {
+                        ForEach(suggestions) { favorite in
+                            HStack {
+                                AvailabilityRow(domain: favorite.domain, knownStatus: favorite.status)
+                                Button("Vigilar") {
+                                    library.toggleWatch(favorite.domain, status: favorite.status)
+                                    checkNow()
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
                     }
-                    .onDelete { library.removeWatch(at: $0) }
+                }
+            } else {
+                Section {
+                    HStack(spacing: 10) {
+                        StatCard(value: library.watchlist.count, title: "Vigilando", systemImage: "eye", tint: .blue) {}
+                        StatCard(value: urgentCount, title: "Caducan pronto", systemImage: "exclamationmark.triangle.fill",
+                                 tint: urgentCount == 0 ? .gray : .orange) {}
+                        StatCard(value: freeCount, title: "Libres", systemImage: "checkmark.circle.fill",
+                                 tint: freeCount == 0 ? .gray : .green) {}
+                    }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+                    .listRowBackground(Color.clear)
+                }
+
+                Section("Por urgencia") {
+                    ForEach(sortedItems) { item in
+                        AvailabilityRow(
+                            domain: item.domain,
+                            knownStatus: item.lastStatus,
+                            expires: item.expires,
+                            isPending: isChecking,
+                            detail: lastChecked(item)
+                        )
+                    }
+                    .onDelete { offsets in
+                        let items = sortedItems
+                        offsets.map { items[$0].domain }.forEach { library.toggleWatch($0) }
+                    }
                 }
             }
         }
@@ -172,17 +219,32 @@ struct WatchlistView: View {
         #endif
     }
 
-    private func detail(for item: WatchItem) -> String {
-        var parts: [String] = []
-        if let expires = item.expires {
-            parts.append("Caduca \(expires.formatted(date: .abbreviated, time: .omitted))")
+    private func lastChecked(_ item: WatchItem) -> String {
+        item.lastChecked.map { "Revisado \($0.formatted(.relative(presentation: .named)))" } ?? "Sin revisar"
+    }
+
+    private var sortedItems: [WatchItem] {
+        func rank(_ item: WatchItem) -> (Int, Date) {
+            if item.lastStatus?.isAvailable == true { return (0, .distantPast) }
+            if let expires = item.expires { return (1, expires) }
+            return (2, item.addedAt)
         }
-        if let checked = item.lastChecked {
-            parts.append("Revisado \(checked.formatted(.relative(presentation: .named)))")
-        } else {
-            parts.append("Sin revisar")
-        }
-        return parts.joined(separator: " · ")
+        return library.watchlist.sorted { rank($0) < rank($1) }
+    }
+
+    private var urgentCount: Int {
+        library.watchlist.filter { item in
+            item.lastStatus?.isAvailable != true
+                && item.expires.map { ExpiryUrgency.level(for: $0, warningDays: settings.expiryWarningDays).isUrgent } == true
+        }.count
+    }
+
+    private var freeCount: Int {
+        library.watchlist.filter { $0.lastStatus?.isAvailable == true }.count
+    }
+
+    private var suggestions: [SavedDomain] {
+        library.favorites.filter { $0.status?.isAvailable == false && !library.isWatched($0.domain) }
     }
 
     private func add() {

@@ -8,37 +8,59 @@
 
 /* Begin PBXBuildFile section */
 		0C29A6A7B6C05575E5C8B7C0 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B7D99B88416560101C901 /* Availability.swift */; };
+		1BF04CDFF9299BB4A5FC0019 /* Registrars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253D5C7CF754E9A725AC55A /* Registrars.swift */; };
 		22D1B084B9C0C64CB86C3CE4 /* RDAPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CDAD2018BB87641E9C097 /* RDAPClient.swift */; };
 		262241DB7520F9386274531C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3E48D4B9BABC5FB05CF463 /* ContentView.swift */; };
 		2CDB98808BCC3A47B35053E7 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C86D565F10D9CCE7FB2B45 /* Platform.swift */; };
+		308F0C0667A21935C5EB5B44 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF79B48EF1320662103175 /* AppSettings.swift */; };
+		3194700F05428CEA0D36F18F /* BulkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42D8C6C80B5B8F058C50 /* BulkView.swift */; };
+		4EA230503CDA11AA6390B6CA /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB3AFD00E7B846296B5A79A /* Components.swift */; };
 		62549234DF5B445302A53F62 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47990416B69312DC7A560DEF /* HTTPClient.swift */; };
+		682EC05A395C1ECF286140A1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C00F877111216236EB6BB /* SettingsView.swift */; };
 		683CA1D9959E80E3CDE0A37D /* DNSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE134CB779EAD9CDD5318117 /* DNSClient.swift */; };
 		73A1E98707A53ABF6630427D /* CertificateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDA9FA82ECDE64E93A3F69C /* CertificateInfo.swift */; };
 		73D6CB85779830E05009310F /* BulkAndExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2582DC790CC451D0A7C714BF /* BulkAndExport.swift */; };
 		7C52592CFB298BEFDC580235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59DAA59D477A91E75E0468AF /* Assets.xcassets */; };
+		7C78891C0D8C1F0FDDC45393 /* LibraryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D80DA1296848034956980 /* LibraryViews.swift */; };
+		8F7C3F7AC32AF5AAFD51AD2D /* AnalyzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F27F9CCBE736237657D46 /* AnalyzeView.swift */; };
+		9447ACA5F1F6F9A8790C5DA1 /* Monitors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D8F8CB699D2A3665AC978 /* Monitors.swift */; };
 		BEB9A830ECD5B9EDA2B21D7D /* DomainLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05E0860E49B9CCC1DEACC2 /* DomainLookupService.swift */; };
+		C056F573D367A87ADC44BB4A /* LibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB1F487B96E62C300C7914 /* LibraryStore.swift */; };
 		CD75C1A6A3A155BFC9C2F0C1 /* SuggestionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178584A5AAE0F7E69E89B085 /* SuggestionEngine.swift */; };
 		E6844B1337E618489F9DCB17 /* DomainWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38194B48F1AACCA0184B497 /* DomainWidgetApp.swift */; };
 		ED704B95D812CDC3D6FFD4BB /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6C417F257742F02BFBEA2 /* ReportView.swift */; };
+		EDCAEB0415D1DFDFE5232EF7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657EE23CC8EEB739B6ECF6F /* RootView.swift */; };
 		F61E5F4E1C109E27A11693FB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DD7666F620B6BA6684C585 /* Models.swift */; };
+		F98E2B4388EC3A7DA4A1A40A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A05AA199EF28C4A7AFFBF /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AED42D8C6C80B5B8F058C50 /* BulkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkView.swift; sourceTree = "<group>"; };
+		1253D5C7CF754E9A725AC55A /* Registrars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registrars.swift; sourceTree = "<group>"; };
 		132B7D99B88416560101C901 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		178584A5AAE0F7E69E89B085 /* SuggestionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionEngine.swift; sourceTree = "<group>"; };
 		1DDA9FA82ECDE64E93A3F69C /* CertificateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateInfo.swift; sourceTree = "<group>"; };
+		20DB1F487B96E62C300C7914 /* LibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStore.swift; sourceTree = "<group>"; };
 		2582DC790CC451D0A7C714BF /* BulkAndExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkAndExport.swift; sourceTree = "<group>"; };
 		350CDAD2018BB87641E9C097 /* RDAPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDAPClient.swift; sourceTree = "<group>"; };
+		389D80DA1296848034956980 /* LibraryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViews.swift; sourceTree = "<group>"; };
 		47990416B69312DC7A560DEF /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		582F27F9CCBE736237657D46 /* AnalyzeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeView.swift; sourceTree = "<group>"; };
 		59DAA59D477A91E75E0468AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67DD7666F620B6BA6684C585 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		74C86D565F10D9CCE7FB2B45 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		7657EE23CC8EEB739B6ECF6F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		770C5B730A8FBE3C009C5372 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E0A05AA199EF28C4A7AFFBF /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		9B6C00F877111216236EB6BB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A7DF79B48EF1320662103175 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		A8F6C417F257742F02BFBEA2 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		AE134CB779EAD9CDD5318117 /* DNSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSClient.swift; sourceTree = "<group>"; };
+		BCB3AFD00E7B846296B5A79A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		C262A14B995D2DA91C7728B7 /* DomainWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DomainWidget.entitlements; sourceTree = "<group>"; };
 		CB3E48D4B9BABC5FB05CF463 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE05E0860E49B9CCC1DEACC2 /* DomainLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainLookupService.swift; sourceTree = "<group>"; };
+		EB1D8F8CB699D2A3665AC978 /* Monitors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitors.swift; sourceTree = "<group>"; };
 		F38194B48F1AACCA0184B497 /* DomainWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainWidgetApp.swift; sourceTree = "<group>"; };
 		A30000000000000000000001 /* DomainWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DomainWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,12 +103,16 @@
 		35D315DEBBF45F223B169A61 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A7DF79B48EF1320662103175 /* AppSettings.swift */,
 				132B7D99B88416560101C901 /* Availability.swift */,
 				2582DC790CC451D0A7C714BF /* BulkAndExport.swift */,
 				1DDA9FA82ECDE64E93A3F69C /* CertificateInfo.swift */,
 				AE134CB779EAD9CDD5318117 /* DNSClient.swift */,
 				47990416B69312DC7A560DEF /* HTTPClient.swift */,
+				20DB1F487B96E62C300C7914 /* LibraryStore.swift */,
+				EB1D8F8CB699D2A3665AC978 /* Monitors.swift */,
 				350CDAD2018BB87641E9C097 /* RDAPClient.swift */,
+				1253D5C7CF754E9A725AC55A /* Registrars.swift */,
 				178584A5AAE0F7E69E89B085 /* SuggestionEngine.swift */,
 			);
 			path = Core;
@@ -95,8 +121,15 @@
 		38DF21AEF4612506D6BE5CBE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				582F27F9CCBE736237657D46 /* AnalyzeView.swift */,
+				0AED42D8C6C80B5B8F058C50 /* BulkView.swift */,
+				BCB3AFD00E7B846296B5A79A /* Components.swift */,
+				389D80DA1296848034956980 /* LibraryViews.swift */,
 				74C86D565F10D9CCE7FB2B45 /* Platform.swift */,
 				A8F6C417F257742F02BFBEA2 /* ReportView.swift */,
+				7657EE23CC8EEB739B6ECF6F /* RootView.swift */,
+				8E0A05AA199EF28C4A7AFFBF /* SearchView.swift */,
+				9B6C00F877111216236EB6BB /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,15 +211,26 @@
 				BEB9A830ECD5B9EDA2B21D7D /* DomainLookupService.swift in Sources */,
 				E6844B1337E618489F9DCB17 /* DomainWidgetApp.swift in Sources */,
 				F61E5F4E1C109E27A11693FB /* Models.swift in Sources */,
+				308F0C0667A21935C5EB5B44 /* AppSettings.swift in Sources */,
 				0C29A6A7B6C05575E5C8B7C0 /* Availability.swift in Sources */,
 				73D6CB85779830E05009310F /* BulkAndExport.swift in Sources */,
 				73A1E98707A53ABF6630427D /* CertificateInfo.swift in Sources */,
 				683CA1D9959E80E3CDE0A37D /* DNSClient.swift in Sources */,
 				62549234DF5B445302A53F62 /* HTTPClient.swift in Sources */,
+				C056F573D367A87ADC44BB4A /* LibraryStore.swift in Sources */,
+				9447ACA5F1F6F9A8790C5DA1 /* Monitors.swift in Sources */,
 				22D1B084B9C0C64CB86C3CE4 /* RDAPClient.swift in Sources */,
+				1BF04CDFF9299BB4A5FC0019 /* Registrars.swift in Sources */,
 				CD75C1A6A3A155BFC9C2F0C1 /* SuggestionEngine.swift in Sources */,
+				8F7C3F7AC32AF5AAFD51AD2D /* AnalyzeView.swift in Sources */,
+				3194700F05428CEA0D36F18F /* BulkView.swift in Sources */,
+				4EA230503CDA11AA6390B6CA /* Components.swift in Sources */,
+				7C78891C0D8C1F0FDDC45393 /* LibraryViews.swift in Sources */,
 				2CDB98808BCC3A47B35053E7 /* Platform.swift in Sources */,
 				ED704B95D812CDC3D6FFD4BB /* ReportView.swift in Sources */,
+				EDCAEB0415D1DFDFE5232EF7 /* RootView.swift in Sources */,
+				F98E2B4388EC3A7DA4A1A40A /* SearchView.swift in Sources */,
+				682EC05A395C1ECF286140A1 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

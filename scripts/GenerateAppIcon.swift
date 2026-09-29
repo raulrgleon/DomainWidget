@@ -18,7 +18,7 @@ let sizes: [(Int, String)] = [
     (1024, "icon_512x512@2x.png")
 ]
 
-func renderIcon(pixelSize: Int) -> Data {
+func renderIcon(pixelSize: Int, fullBleed: Bool = false) -> Data {
     let size = CGFloat(pixelSize)
     guard let rep = NSBitmapImageRep(
         bitmapDataPlanes: nil,
@@ -46,9 +46,9 @@ func renderIcon(pixelSize: Int) -> Data {
     NSColor.clear.setFill()
     NSRect(x: 0, y: 0, width: size, height: size).fill()
 
-    let inset = size * 0.06
+    let inset = fullBleed ? 0 : size * 0.06
     let drawRect = NSRect(x: inset, y: inset, width: size - inset * 2, height: size - inset * 2)
-    let corner = drawRect.width * 0.223
+    let corner = fullBleed ? 0 : drawRect.width * 0.223
     let path = NSBezierPath(roundedRect: drawRect, xRadius: corner, yRadius: corner)
     NSColor(calibratedRed: 0.18, green: 0.45, blue: 0.91, alpha: 1).setFill()
     path.fill()
@@ -86,3 +86,8 @@ for (pixelSize, filename) in sizes {
     try png.write(to: url)
     print("Wrote \(filename)")
 }
+
+// iOS aplica su propia máscara: icono opaco a sangre completa.
+let iosURL = URL(fileURLWithPath: outputDir).appendingPathComponent("icon_ios_1024.png")
+try renderIcon(pixelSize: 1024, fullBleed: true).write(to: iosURL)
+print("Wrote icon_ios_1024.png")

@@ -3,6 +3,7 @@ import SwiftUI
 @main
 struct DomainWidgetApp: App {
     var body: some Scene {
+        #if os(macOS)
         MenuBarExtra("Datos de dominio", systemImage: "globe.desk") {
             ContentView()
                 .frame(width: 420, height: 580)
@@ -15,5 +16,10 @@ struct DomainWidgetApp: App {
         }
         .windowResizability(.contentSize)
         .defaultSize(width: 440, height: 640)
+        #else
+        WindowGroup {
+            ContentView()
+        }
+        #endif
     }
 }

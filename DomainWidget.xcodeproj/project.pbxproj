@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A10000000000000000000001 /* DomainWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* DomainWidgetApp.swift */; };
-		A10000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* ContentView.swift */; };
-		A10000000000000000000003 /* DomainLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* DomainLookupService.swift */; };
-		A10000000000000000000004 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* Models.swift */; };
-		A10000000000000000000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* Assets.xcassets */; };
+		0C29A6A7B6C05575E5C8B7C0 /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B7D99B88416560101C901 /* Availability.swift */; };
+		22D1B084B9C0C64CB86C3CE4 /* RDAPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350CDAD2018BB87641E9C097 /* RDAPClient.swift */; };
+		262241DB7520F9386274531C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3E48D4B9BABC5FB05CF463 /* ContentView.swift */; };
+		2CDB98808BCC3A47B35053E7 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C86D565F10D9CCE7FB2B45 /* Platform.swift */; };
+		62549234DF5B445302A53F62 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47990416B69312DC7A560DEF /* HTTPClient.swift */; };
+		683CA1D9959E80E3CDE0A37D /* DNSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE134CB779EAD9CDD5318117 /* DNSClient.swift */; };
+		73A1E98707A53ABF6630427D /* CertificateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDA9FA82ECDE64E93A3F69C /* CertificateInfo.swift */; };
+		73D6CB85779830E05009310F /* BulkAndExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2582DC790CC451D0A7C714BF /* BulkAndExport.swift */; };
+		7C52592CFB298BEFDC580235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59DAA59D477A91E75E0468AF /* Assets.xcassets */; };
+		BEB9A830ECD5B9EDA2B21D7D /* DomainLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05E0860E49B9CCC1DEACC2 /* DomainLookupService.swift */; };
+		CD75C1A6A3A155BFC9C2F0C1 /* SuggestionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178584A5AAE0F7E69E89B085 /* SuggestionEngine.swift */; };
+		E6844B1337E618489F9DCB17 /* DomainWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38194B48F1AACCA0184B497 /* DomainWidgetApp.swift */; };
+		ED704B95D812CDC3D6FFD4BB /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6C417F257742F02BFBEA2 /* ReportView.swift */; };
+		F61E5F4E1C109E27A11693FB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DD7666F620B6BA6684C585 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A20000000000000000000001 /* DomainWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainWidgetApp.swift; sourceTree = "<group>"; };
-		A20000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A20000000000000000000003 /* DomainLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainLookupService.swift; sourceTree = "<group>"; };
-		A20000000000000000000004 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		A20000000000000000000005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A20000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A20000000000000000000007 /* DomainWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DomainWidget.entitlements; sourceTree = "<group>"; };
+		132B7D99B88416560101C901 /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
+		178584A5AAE0F7E69E89B085 /* SuggestionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionEngine.swift; sourceTree = "<group>"; };
+		1DDA9FA82ECDE64E93A3F69C /* CertificateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateInfo.swift; sourceTree = "<group>"; };
+		2582DC790CC451D0A7C714BF /* BulkAndExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkAndExport.swift; sourceTree = "<group>"; };
+		350CDAD2018BB87641E9C097 /* RDAPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDAPClient.swift; sourceTree = "<group>"; };
+		47990416B69312DC7A560DEF /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		59DAA59D477A91E75E0468AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67DD7666F620B6BA6684C585 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		74C86D565F10D9CCE7FB2B45 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		770C5B730A8FBE3C009C5372 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8F6C417F257742F02BFBEA2 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		AE134CB779EAD9CDD5318117 /* DNSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSClient.swift; sourceTree = "<group>"; };
+		C262A14B995D2DA91C7728B7 /* DomainWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DomainWidget.entitlements; sourceTree = "<group>"; };
+		CB3E48D4B9BABC5FB05CF463 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE05E0860E49B9CCC1DEACC2 /* DomainLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainLookupService.swift; sourceTree = "<group>"; };
+		F38194B48F1AACCA0184B497 /* DomainWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainWidgetApp.swift; sourceTree = "<group>"; };
 		A30000000000000000000001 /* DomainWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DomainWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,15 +65,40 @@
 		A50000000000000000000002 /* DomainWidget */ = {
 			isa = PBXGroup;
 			children = (
-				A20000000000000000000001 /* DomainWidgetApp.swift */,
-				A20000000000000000000002 /* ContentView.swift */,
-				A20000000000000000000003 /* DomainLookupService.swift */,
-				A20000000000000000000004 /* Models.swift */,
-				A20000000000000000000005 /* Assets.xcassets */,
-				A20000000000000000000006 /* Info.plist */,
-				A20000000000000000000007 /* DomainWidget.entitlements */,
+				35D315DEBBF45F223B169A61 /* Core */,
+				38DF21AEF4612506D6BE5CBE /* Views */,
+				CB3E48D4B9BABC5FB05CF463 /* ContentView.swift */,
+				CE05E0860E49B9CCC1DEACC2 /* DomainLookupService.swift */,
+				F38194B48F1AACCA0184B497 /* DomainWidgetApp.swift */,
+				67DD7666F620B6BA6684C585 /* Models.swift */,
+				59DAA59D477A91E75E0468AF /* Assets.xcassets */,
+				770C5B730A8FBE3C009C5372 /* Info.plist */,
+				C262A14B995D2DA91C7728B7 /* DomainWidget.entitlements */,
 			);
 			path = DomainWidget;
+			sourceTree = "<group>";
+		};
+		35D315DEBBF45F223B169A61 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				132B7D99B88416560101C901 /* Availability.swift */,
+				2582DC790CC451D0A7C714BF /* BulkAndExport.swift */,
+				1DDA9FA82ECDE64E93A3F69C /* CertificateInfo.swift */,
+				AE134CB779EAD9CDD5318117 /* DNSClient.swift */,
+				47990416B69312DC7A560DEF /* HTTPClient.swift */,
+				350CDAD2018BB87641E9C097 /* RDAPClient.swift */,
+				178584A5AAE0F7E69E89B085 /* SuggestionEngine.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		38DF21AEF4612506D6BE5CBE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74C86D565F10D9CCE7FB2B45 /* Platform.swift */,
+				A8F6C417F257742F02BFBEA2 /* ReportView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A50000000000000000000003 /* Products */ = {
@@ -120,7 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10000000000000000000005 /* Assets.xcassets in Resources */,
+				7C52592CFB298BEFDC580235 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,10 +174,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10000000000000000000001 /* DomainWidgetApp.swift in Sources */,
-				A10000000000000000000002 /* ContentView.swift in Sources */,
-				A10000000000000000000003 /* DomainLookupService.swift in Sources */,
-				A10000000000000000000004 /* Models.swift in Sources */,
+				262241DB7520F9386274531C /* ContentView.swift in Sources */,
+				BEB9A830ECD5B9EDA2B21D7D /* DomainLookupService.swift in Sources */,
+				E6844B1337E618489F9DCB17 /* DomainWidgetApp.swift in Sources */,
+				F61E5F4E1C109E27A11693FB /* Models.swift in Sources */,
+				0C29A6A7B6C05575E5C8B7C0 /* Availability.swift in Sources */,
+				73D6CB85779830E05009310F /* BulkAndExport.swift in Sources */,
+				73A1E98707A53ABF6630427D /* CertificateInfo.swift in Sources */,
+				683CA1D9959E80E3CDE0A37D /* DNSClient.swift in Sources */,
+				62549234DF5B445302A53F62 /* HTTPClient.swift in Sources */,
+				22D1B084B9C0C64CB86C3CE4 /* RDAPClient.swift in Sources */,
+				CD75C1A6A3A155BFC9C2F0C1 /* SuggestionEngine.swift in Sources */,
+				2CDB98808BCC3A47B35053E7 /* Platform.swift in Sources */,
+				ED704B95D812CDC3D6FFD4BB /* ReportView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,9 +204,10 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = auto;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -168,9 +221,11 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				SDKROOT = macosx;
+				SDKROOT = auto;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -179,23 +234,42 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DomainWidget/DomainWidget.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = DomainWidget/DomainWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = CNU4S77L2K;
 				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DomainWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Datos de dominio";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Datos de dominio";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raul.DomainWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -204,23 +278,42 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DomainWidget/DomainWidget.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = DomainWidget/DomainWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = CNU4S77L2K;
 				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DomainWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Datos de dominio";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Datos de dominio";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raul.DomainWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -31,6 +31,7 @@ struct SSLInfo {
     let validUntil: Date?
     let isExpired: Bool
     let daysRemaining: Int?
+    let isTrusted: Bool
 }
 
 struct RegistrationInfo {

@@ -59,6 +59,7 @@ final class AppRouter {
     }
     var path: [DomainRoute] = []
     var pendingSearch: String?
+    var pendingAnalyze: String?
 
     func analyze(_ domain: String) {
         if path.last?.domain != domain {
@@ -70,6 +71,23 @@ final class AppRouter {
         pendingSearch = query
         selection = .search
         path = []
+    }
+
+    /// domainwidget://buscar?q=nombre · domainwidget://analizar?d=dominio.com
+    func handle(_ url: URL) {
+        guard url.scheme == "domainwidget",
+              let items = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems else { return }
+        let value = items.first { $0.name == "q" || $0.name == "d" }?.value ?? ""
+        guard !value.isEmpty else { return }
+        switch url.host {
+        case "buscar", "search":
+            search(value)
+        case "analizar", "analyze":
+            pendingAnalyze = value
+            selection = .analyze
+        default:
+            break
+        }
     }
 }
 
@@ -117,6 +135,7 @@ struct RootView: View {
                 }
             }
         }
+        .onOpenURL { router.handle($0) }
     }
 
     private func row(_ item: SidebarItem, badge: Int = 0) -> some View {

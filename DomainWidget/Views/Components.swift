@@ -57,22 +57,26 @@ struct AvailabilityRow: View {
             }
             .frame(width: 20)
 
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 3) {
                 Text(domain)
                     .font(.body.weight(.medium))
-                if let subtitle {
-                    Text(subtitle)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+                    .truncationMode(.middle)
+                HStack(spacing: 6) {
+                    if let status {
+                        StatusBadge(status: status)
+                    }
+                    if let subtitle {
+                        Text(subtitle)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                    }
                 }
             }
 
             Spacer(minLength: 8)
-
-            if let status {
-                StatusBadge(status: status)
-            }
 
             if status?.isAvailable == true {
                 RegisterMenu(domain: domain, compact: true)
@@ -115,8 +119,12 @@ struct AvailabilityRow: View {
                 result.expires.map { "Caduca \($0.formatted(date: .abbreviated, time: .omitted))" },
                 result.registrar
             ].compactMap { $0 }
-            return parts.isEmpty ? "Registrado" : parts.joined(separator: " · ")
-        default:
+            return parts.isEmpty ? nil : parts.joined(separator: " · ")
+        case .available:
+            return nil
+        case .likelyAvailable, .likelyTaken:
+            return "Sin RDAP · deducido por DNS"
+        case .unknown:
             return result.note
         }
     }

@@ -8,6 +8,17 @@
 	<array>
 		<string>com.raul.DomainWidget.watchlist</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.raul.DomainWidget</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>domainwidget</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

@@ -128,8 +128,11 @@ struct SearchView: View {
             defaultFilename: "dominios-\(DomainName.split(query).label)"
         ) { _ in }
         .onAppear {
-            consumePendingSearch()
-            if domains.isEmpty { fieldFocused = true }
+            if router.pendingSearch != nil {
+                consumePendingSearch()
+            } else if domains.isEmpty {
+                fieldFocused = true
+            }
         }
         .onChange(of: router.pendingSearch) { consumePendingSearch() }
     }
@@ -186,6 +189,7 @@ struct SearchView: View {
         }
 
         let list = tlds.map { "\(parts.label).\($0)" }
+        fieldFocused = false
         message = nil
         domains = list
         results = [:]

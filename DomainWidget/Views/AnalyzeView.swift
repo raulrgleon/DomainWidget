@@ -43,7 +43,21 @@ struct AnalyzeView: View {
             }
         }
         .navigationTitle("Analizar dominio")
-        .onAppear { fieldFocused = true }
+        .onAppear {
+            if router.pendingAnalyze != nil {
+                consumePendingAnalyze()
+            } else {
+                fieldFocused = true
+            }
+        }
+        .onChange(of: router.pendingAnalyze) { consumePendingAnalyze() }
+    }
+
+    private func consumePendingAnalyze() {
+        guard let pending = router.pendingAnalyze else { return }
+        router.pendingAnalyze = nil
+        query = pending
+        analyze()
     }
 
     private func analyze() {
